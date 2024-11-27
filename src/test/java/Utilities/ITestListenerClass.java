@@ -41,16 +41,16 @@ public class ITestListenerClass implements ITestListener {
 
 
     public void onTestSuccess(ITestResult result) {
-        System.out.println("Name of the test method successfully excuted "+result.getName());
+        System.out.println("Name of the test method successfully executed "+result.getName());
         test=reports.createTest(result.getName());
-        test.log(Status.PASS, MarkupHelper.createLabel("Name of the skip test case is: "+result.getName(), ExtentColor.GREEN));
+        test.log(Status.PASS, MarkupHelper.createLabel("Name of the Passed test case is: "+result.getName(), ExtentColor.GREEN));
     }
 
 
     public void onTestFailure(ITestResult result) {
         System.out.println("Name of test method failed:"+result.getName());
         test=reports.createTest(result.getName());
-        test.log(Status.FAIL, MarkupHelper.createLabel("Name of the skip test case is: "+result.getName(),ExtentColor.RED));
+        test.log(Status.FAIL, MarkupHelper.createLabel("Name of the Failed test case is: "+result.getName(),ExtentColor.RED));
 
         String screenShotPath= System.getProperty("user.dir") +"\\Screenshots\\" + result.getName() + ".png";
 
@@ -66,7 +66,7 @@ public class ITestListenerClass implements ITestListener {
     public void onTestSkipped(ITestResult result) {
         System.out.println("Name of test method skipped "+result.getName());
         test=reports.createTest(result.getName());
-        test.log(Status.SKIP, MarkupHelper.createLabel("Name of the skip test case is: "+result.getName(),ExtentColor.YELLOW));
+        test.log(Status.SKIP, MarkupHelper.createLabel("Name of the Skipped test case is: "+result.getName(),ExtentColor.YELLOW));
     }
 
 

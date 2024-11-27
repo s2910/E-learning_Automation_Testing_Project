@@ -11,7 +11,7 @@ import java.util.SplittableRandom;
 
 public class LoginTest extends BaseTest {
 
-    @Test(priority =1,dataProvider="LoginDataProvider")
+    @Test(priority =1)
     void verifyLogin() {
         LoginPage lp = new LoginPage(driver);
         String username = "Demo12";
